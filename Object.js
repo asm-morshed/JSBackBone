@@ -19,7 +19,7 @@ var studentObj = {11: "ASM",22:"Morshed"};
 
 console.log(studentObj["11"]);
 
-// Reference Data Type and Primitive Data Type
+// ######### Reference Data Type and Primitive Data Type ########
 
 // In primitive data type's the value is stored as a value
 
@@ -46,7 +46,7 @@ console.log(name.myName);
 
 // Creating Objects
 
-// There are two common types to create objects:
+// ###########There are two common types to create objects: #######
 
 // 1. Object Literals
 
@@ -79,8 +79,8 @@ student.activity = function () {
 
 student.activity();
 
-//** Objects can contain any other data type, including number,
-//arrays and even other Objects **
+//####### Objects can contain any other data type, including number,
+//arrays and even other Objects ####
 
 
 //Constructor Pattern for creating Object
@@ -131,6 +131,8 @@ aStudent.hobbyList();
 
 // Need to read the recommended
 
+// #######################################################
+
 // Dot Notation and Bracket Notation
 
 var student = {name: "ASM Morshed", age: 26, hometown:"Dinajpur"};
@@ -138,3 +140,12 @@ var student = {name: "ASM Morshed", age: 26, hometown:"Dinajpur"};
 console.log(student.name); // Dot Notation
 
 console.log(student["name"]); // Bracket Notation
+
+//###### Own and Inherited Properties ######
+
+// Own property is the object property where inherited property is the Prototype property
+
+
+var student = {name : "ASM Morshed"};
+
+console.log("name" in student);

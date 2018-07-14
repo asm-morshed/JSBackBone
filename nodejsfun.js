@@ -21,5 +21,9 @@ fs.readFile('data.txt','utf-8',function(err, value){
     })
     console.log(selectedLines);
 })
+//Using ES6 Code 
+fs.readFile('data.txt','utf-8',(err,value)=>{
+    value.split('\n').filter(line=>line.includes('Dinajpur')).forEach(line=>console.log(line));
+})
 
 console.log("We are starting to collect data");

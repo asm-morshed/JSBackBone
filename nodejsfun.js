@@ -1,3 +1,15 @@
+//creating a node server
+
+const http = require('http');
+
+function onRequest(req,res){
+    res.writeHead(200, {'content-type': 'text/plain'})
+    res.write('Alhamdulillah it is working')
+    res.end()
+}
+
+http.createServer(onRequest).listen(8080);
+
 //This program will include some text form a text file and split it with newline
 //Then it will select only those line which is included some specific word
 

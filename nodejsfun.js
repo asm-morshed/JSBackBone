@@ -1,20 +1,49 @@
 //creating a node server
 
 const http = require('http');
+const fs = require('fs');
+const url = require('url');
 
+function renderHTML (path, res){
+    fs.readFile(path, null, function(err, data){
+        if(err){
+            res.writeHead(404);
+            res.write("File not found");
+        }else{
+            res.write(data);
+        }
+        res.end();
+    })
+}
 function onRequest(req,res){
-    res.writeHead(200, {'content-type': 'text/plain'})
-    res.write('Alhamdulillah it is working')
-    res.end()
+    res.writeHead(200, {'content-type': 'text/html'})
+    const path = url.parse(req.url).pathname;
+    switch(path){
+        case '/' :
+            renderHTML('./view/index.html',res)
+            break;
+        case '/about':
+            renderHTML('./view/about.html',res)
+            break;
+        default:
+            res.writeHead(404)
+            res.write("Route is not defined");
+            res.end()
+
+    }
 }
 
 http.createServer(onRequest).listen(8080);
+
+
+//creating a server and fetchin html file to display on web browser
+
 
 //This program will include some text form a text file and split it with newline
 //Then it will select only those line which is included some specific word
 
 
-const fs = require('fs')
+
 
 fs.readFile('data.txt','utf-8',function(err, value){
     
